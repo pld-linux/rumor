@@ -8,7 +8,11 @@ Source0:	http://www.volny.cz/smilauer/rumor/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	c95917356659b77bb83505cb2512ad1b
 URL:		http://www.volny.cz/smilauer/rumor
 BuildRequires:	alsa-lib-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	guile-devel
+BuildRequires:	libstdc++-devel
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -43,4 +47,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/rumor
-%{_infodir}/rumor.info.gz
+%{_infodir}/rumor.info*
