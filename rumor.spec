@@ -13,6 +13,7 @@ BuildRequires:	automake
 BuildRequires:	guile-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -24,6 +25,7 @@ via command-line options.
 
 %prep
 %setup -q
+%{__sed} -i '/CXXFLAGS=.*-O[0-3].*/d' configure.ac
 
 %build
 %{__libtoolize}
@@ -31,7 +33,8 @@ via command-line options.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	%{!?debug:--disable-debug}
 %{__make}
 
 %install
