@@ -1,7 +1,7 @@
 Summary:	Really Unintelligent Music transcriptOR
 Name:		rumor
 Version:	1.0.3b
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/Sound
 Source0:	http://www.volny.cz/smilauer/rumor/src/%{name}-%{version}.tar.bz2
